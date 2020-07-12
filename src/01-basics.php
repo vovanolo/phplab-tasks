@@ -12,15 +12,15 @@
  */
 function getMinuteQuarter(int $minute)
 {
-    if($minute>0 && $minute<=15){
+    if($minute > 0 && $minute <= 15){
         return "first";
-    } elseif ($minute>=16 && $minute<=30){
+    } elseif ($minute >= 16 && $minute <= 30){
         return "second";
-    }elseif ($minute>=31 && $minute<=45){
+    }elseif ($minute >= 31 && $minute <= 45){
         return "third";
-    }elseif ($minute>=46 && $minute<=59 || $minute === 0){
+    }elseif ($minute >= 46 && $minute <= 59 || $minute === 0){
         return 'fourth';
-    }elseif($minute>=60 || $minute<0){
+    }elseif($minute >= 60 || $minute < 0){
         throw new InvalidArgumentException('you enter wrong number - '.$minute);
     }
 }
@@ -41,7 +41,7 @@ function isLeapYear(int $year)
     if(!($year % 4) && ($year % 100 || !($year % 400))){
         return true;
     }
-    elseif ($year<=1990){
+    elseif ($year < 1990){
         throw new InvalidArgumentException('you enter wrong year and the year is - '.$year);
     }
     else{
